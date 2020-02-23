@@ -31,10 +31,6 @@ export class ItemsListComponent implements OnInit {
  getItemsList(){
     let res= this.itemService.getItemsList();
     this.getData(res);
-    //res.subscribe(data=>{
-      //this.items=data;
-      //console.log(this.items);}
-     // );
   }
 
   getItemById(id:number){
@@ -56,21 +52,16 @@ export class ItemsListComponent implements OnInit {
   deleteItem(id:number){
      let res = this.itemService.deleteItem(id);
      this.getData(res);
-     //res.subscribe(data=>console.log(data))
   }
 
   depositItemQuantity(id:number, amount:number){
     let res=this.itemService.depositItemQuantity(id,amount);
     this.getData(res);
-    //res.subscribe(data=>console.log(data));
-    //this.getItemsList();
   }
 
   withrawItemQuantity(id:number, amount:number){
    let res= this.itemService.withrawItemQuantity(id,amount);
    this.getData(res);
-   //res.subscribe(data=>console.log(data));
-    //this.getItemsList();
   }
 
   getData(res){
