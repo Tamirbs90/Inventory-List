@@ -13,7 +13,7 @@ export class ItemsService {
   constructor(private http : HttpClient) { }
 
   public getItemsList() {
-    return this.http.get(this.host+'/items');
+    return this.http.get(this.host+'items');
   }
 
   public getItemById(id: number) : Observable<Item> {
@@ -22,7 +22,7 @@ export class ItemsService {
 
   public addItem(item: Item){
     console.log(item);
-    return this.http.post(this.host+'/items',item);
+    return this.http.post(this.host+'items',item);
   }
 
   public deleteItem(id:number){
