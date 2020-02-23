@@ -1,0 +1,21 @@
+.form-group{
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.form-control{
+    width: 5cm;
+}
+
+form{
+    margin-top: 20px;
+}
+
+.error{
+    color:red;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+
+

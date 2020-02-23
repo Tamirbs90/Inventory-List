@@ -1,0 +1,41 @@
+
+   <div class= "search">
+        <label>Find item by Id</label><br>
+        <input type="text"  style="width: 100px; margin-right: 10px;" [(ngModel)]='searchId'> 
+        <button (click)="getItemById(searchId)">Search</button>
+    </div>
+    <div class="itemResult" *ngIf="found">
+        <label>Id: {{item.number}}</label> <br>
+        <label>Name: {{item.name}}</label> <br>
+        <label>Amount: {{item.amount}}</label> <br>
+        <label>Inveontory Code: {{item.inventoryCode}}</label>
+    </div>
+    <div *ngIf="error">Item not found</div>
+
+    <div class="itemTable">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Inventory Code</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                        <tr *ngFor='let item of items'>
+                            <td>{{item.number}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.amount}}</td>
+                            <td>{{item.inventoryCode}}</td>
+                            <td> <button (click)='deleteItem(item.number)'>Delete</button> 
+                             <input style="margin-left: 20px;" class="change" type="text" (change)="toDeposit=$event.target.value"> 
+                            <button (click)='depositItemQuantity(item.number,toDeposit)'>Deposit</button>   
+                             <input style="margin-left: 20px;" class= "change" type="text" (change)="toWithraw=$event.target.value"> 
+                                <button (click)='withrawItemQuantity(item.number, toWithraw)'>Withraw</button>
+                            </td>
+                        </tr>
+        </tbody>
+    </table>
+</div>
