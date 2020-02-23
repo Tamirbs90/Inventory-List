@@ -39,13 +39,8 @@ export class AddItemComponent implements OnInit {
     var n = Number(value);
     return n == n && n>0;
   }
-
-
-
+  
   get ItemName(){return this.itemForm.get("name");}
   get ItemAmount() {return this.itemForm.get("amount");}
   get ItemCode(){return this.itemForm.get("inventoryCode");}
- 
-
-
-}
+ }
